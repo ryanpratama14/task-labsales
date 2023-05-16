@@ -29,12 +29,12 @@ export default function Navbar() {
             );
           })}
         </ul>
-        <div className="flex flex-col justify-center items-center text-center text-primary">
-          <a className="text-xl font-semibold">+7 (918) 377-48-10</a>
+        <div className="flex font-semibold flex-col justify-center items-center text-center text-primary">
+          <a className="text-xl">+7 (918) 377-48-10</a>
           <a
             href="tel:+79183774810"
             target="_blank"
-            className="font-raleway w-fit font-semibold relative"
+            className="font-raleway w-fit text-lg relative"
           >
             Заказать звонок
             <div className="absolute bottom-0 w-[110%] h-[1.5px] bg-primary" />

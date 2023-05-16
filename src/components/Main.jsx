@@ -12,7 +12,7 @@ export default function Main() {
     <main className="relative gap-12 flex-col min-h-screen flex justify-center items-center paddingX">
       <img
         src={bg}
-        className="absolute w-full h-full object-cover max-md:hidden"
+        className="absolute  w-full h-full object-cover max-md:hidden"
       />
       <img
         src={bgMobile}
@@ -28,13 +28,20 @@ export default function Main() {
           Жилой Комплекс <span className="font-bold">{`«Яблоновский»`}</span>
         </h1>
         <div className="flex flex-col gap-4 text-center ">
-          <h3 className="">Краснодар, пгт. Яблоновский ул. Кобцевой</h3>
-          <h2 className="font-bold">от 63 801 до 65 678 ₽/м²</h2>
+          <h3 className="md:inline-block hidden">
+            Краснодар, пгт. Яблоновский ул. Кобцевой
+          </h3>
+          <h3 className="md:hidden">
+            Краснодар,
+            <br />
+            пгт. Яблоновский ул. Кобцевой
+          </h3>
+          <h3 className="font-bold">от 63 801 до 65 678 ₽/м²</h3>
         </div>
         <button className="round text-xl font-semibold">
           Узнать стоимость проекта
         </button>
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 w-full z-[2]">
           {MainPageData?.map((e, i) => {
             return (
               <div
@@ -52,9 +59,9 @@ export default function Main() {
                   />
                 </div>
                 <div className="p-4 round bg-white shadowboxchildren">
-                  <div key={i} className="flex flex-col gap-2">
-                    <h4>{e?.label}</h4>
-                    <h4 className="font-bold">{e?.desc}</h4>
+                  <div key={i} className="flex flex-col gap-2 text-left">
+                    <h5>{e?.label}</h5>
+                    <h5 className="font-bold">{e?.desc}</h5>
                   </div>
                 </div>
               </div>
@@ -68,18 +75,17 @@ export default function Main() {
         mousewheel={{
           forceToAxis: true,
         }}
-        spaceBetween={15}
-        pagination={{ clickable: true }}
+        spaceBetween={40}
         keyboard={true}
         className="w-full md:hidden"
-        modules={[Keyboard, Mousewheel, Pagination]}
+        modules={[Keyboard, Mousewheel]}
       >
         {MainPageData?.map((e, i) => {
           return (
             <SwiperSlide
               key={i}
               onClick={() => setSelected(i)}
-              className="p-4 round bg-gray relative cursor-pointer shadowbox w-[60%]"
+              className="p-4 round bg-gray relative cursor-pointer shadowbox w-[70%]"
             >
               <div className="w-6 bg-gray left-4 centered aspect-square rounded-full absolute flex justify-center items-center">
                 <div
@@ -90,10 +96,10 @@ export default function Main() {
                   }`}
                 />
               </div>
-              <div className="p-4 round bg-white shadowboxchildren">
+              <div className="p-4 round bg-white shadowboxchildren text-primary">
                 <div key={i} className="flex flex-col gap-2">
-                  <h3>{e?.label}</h3>
-                  <h3 className="font-bold">{e?.desc}</h3>
+                  <h3 className="h2 md:h3">{e?.label}</h3>
+                  <h3 className="font-bold md:h3 h2">{e?.desc}</h3>
                 </div>
               </div>
             </SwiperSlide>
