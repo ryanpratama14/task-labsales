@@ -9,15 +9,15 @@ export default function Features() {
   return (
     <section className="pb-normal">
       <div className="flex flex-col">
-        <div className="flex justify-between -mt-[7rem] lg:-mt-56 z-[1] overflow-hidden lg:pt-12">
+        <div className="flex justify-between -mt-[4rem] md:-mt-56 lg:-mt-56 z-[1] overflow-hidden lg:pt-12">
           <img src={cloud1} className="w-full lg:scale-[1.3]" />
           <img src={cloud2} className="lg:block hidden lg:scale-[1.3]" />
         </div>
         <div className="paddingX flex flex-col justify-center items-center gap-6 z-10">
-          <h2 className="text-primary md:hidden inline-block font-bold">
+          <h1 className="text-primary md:hidden inline-block font-bold">
             О комплексе
-          </h2>
-          <div className="hidden md:grid grid-cols-4 xl:grid-cols-4 gap-4 xl:gap-8 w-full">
+          </h1>
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-8 w-full">
             {FeaturesData?.map((e, i) => {
               return (
                 <div
@@ -30,10 +30,10 @@ export default function Features() {
                       <img src={e?.icon} className="w-8 xl:w-12" />
                     </div>
                     <div className="flex flex-col justify-between text-primary">
-                      <h4 className="p lg:h5 xl:h4">{e?.label}</h4>
-                      <h4 className="pSmaller lg:h5 xl:h4 font-semibold">
+                      <h5 className="p lg:h5">{e?.label}</h5>
+                      <h5 className="pSmaller font-semibold lg:h5">
                         {e?.desc}
-                      </h4>
+                      </h5>
                     </div>
                   </div>
                 </div>

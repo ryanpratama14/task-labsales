@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { MainPageData } from "../constants/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Mousewheel, Pagination } from "swiper";
+import NavbarMobile from "./NavbarMobile";
 
 export default function Main() {
   const [selected, setSelected] = useState(0);
@@ -19,7 +20,8 @@ export default function Main() {
         className="absolute w-full h-full object-cover md:hidden"
       />
       <Navbar />
-      <div className="text-primary flex items-center text-center justify-center flex-col z-10 gap-10 pt-longer">
+      <NavbarMobile />
+      <div className="text-primary flex items-center text-center justify-center flex-col z-10 gap-10 pt-32 md:pt-longer">
         <h3 className="md:hidden font-medium text-primaryDarker">
           Главная / Жилые комплексы /<br />
           <span className="font-semibold">/ Яблоновский</span>
@@ -59,7 +61,7 @@ export default function Main() {
                     }`}
                   />
                 </div>
-                <div className="p-4 round bg-white shadowboxchildren">
+                <div className="p-4 lg:px-6 round bg-white shadowboxchildren">
                   <div key={i} className="flex flex-col gap-2 text-left">
                     <h5>{e?.label}</h5>
                     <h5 className="font-bold">{e?.desc}</h5>
@@ -99,8 +101,8 @@ export default function Main() {
               </div>
               <div className="p-4 round bg-white shadowboxchildren text-primary">
                 <div className="flex flex-col gap-2">
-                  <h3 className="h2 md:h3">{e?.label}</h3>
-                  <h3 className="font-bold md:h3 h2">{e?.desc}</h3>
+                  <h3 className="">{e?.label}</h3>
+                  <h3 className="font-bold">{e?.desc}</h3>
                 </div>
               </div>
             </SwiperSlide>

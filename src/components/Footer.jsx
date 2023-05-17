@@ -6,11 +6,11 @@ export default function Footer() {
   return (
     <React.Fragment>
       <footer className="gap-12 paddingX pt-shorter pb-normal hidden md:flex flex-col text-center justify-center items-center bg-gray">
-        <h2 className="text-primary font-bold">
+        <h1 className="text-primary font-bold md:h2">
           Узнайте о выгодных предложениях и получите
           <br />
           личную консультацию
-        </h2>
+        </h1>
         <div className="flex lg:gap-0 gap-12 justify-between lg:flex-nowrap flex-wrap w-full">
           <div className="flex lg:w-fit w-full justify-center lg:gap-12 gap-6 lg:justify-between lg:flex-nowrap flex-wrap items-center">
             <div className="flex flex-col gap-6 text-primary justify-center items-center text-center font-bold">

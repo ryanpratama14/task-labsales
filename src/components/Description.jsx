@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import architecture from "../assets/description/architecture.png";
-import security from "../assets/description/security.png";
-import parking from "../assets/description/parking.png";
-import territory from "../assets/description/territory.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import Arrow from "./Arrow";
+import architecture from "../assets/description/architecture.png";
+import security from "../assets/description/security.png";
+import parking2 from "../assets/description/parking.png";
+import territory from "../assets/description/territory.png";
 
-const itemsPerPage = 1;
 const isMaxSm = window.innerWidth <= 640;
 export default function Description() {
-  const [data, setData] = useState([
+  const [selected, setSelected] = useState(3);
+  const handleChange = (e) => {
+    setSelected(e.id);
+  };
+
+  const data = [
     {
       id: 0,
-      src: parking,
+      src: parking2,
       label: "Парковка",
       desc: (
         <>
@@ -88,17 +92,14 @@ export default function Description() {
         </>
       ),
     },
-  ]);
-
-  const [selected, setSelected] = useState(3);
-  const handleChange = (e) => {
-    setSelected(e.id);
-  };
+  ];
 
   return (
     <section className="flex flex-col gap-8 py-normal">
       <div className="paddingX flex flex-col gap-6 text-center justify-center items-center">
-        <h2 className="text-primary font-bold">Описание Жилого Комплекса</h2>
+        <h1 className="text-primary md:h2 font-bold">
+          Описание Жилого Комплекса
+        </h1>
         <div className="flex flex-wrap  text-center items-center text-primaryDarker font-medium">
           <div className="flex text-center items-center justify-center w-full lg:w-fit">
             <p className="text-2xl text-center">Нажмите</p>
@@ -118,13 +119,13 @@ export default function Description() {
           </p>
         </div>
       </div>
-      <div className="paddingX flex gap-x-8 gap-y-6 flex-wrap">
+      <div className="paddingX flex md:grid md:grid-cols-2 lg:flex gap-x-8 gap-y-6 flex-wrap">
         {data?.map((e, i) => {
           return (
             <div
               onClick={() => !isMaxSm && handleChange(e)}
               key={e?.id}
-              className="cursor-pointer p-4 w-full xl:w-[20%] bg-gray round shadowboxfeatures"
+              className="cursor-pointer p-4 w-full  xl:w-[20%] bg-gray round shadowboxfeatures"
             >
               <div
                 className={`px-4 py-4 lg:py-6 animate border-[1px] bg-white relative round shadowboxfeatureschildren
@@ -156,7 +157,9 @@ export default function Description() {
                 <img src={e?.src} className="absolute w-full h-full" />
                 <div className="p-4 absolute left-6 bottom-12 flex flex-col gap-8 w-[70%] bg-[#ffff]/80 round">
                   <h4 className="text-primary font-bold">{e?.label}</h4>
-                  <p className="text-primaryDarker font-normal">{e?.desc}</p>
+                  <p className="text-primaryDarker font-normal md:pSmaller2 lg:p">
+                    {e?.desc}
+                  </p>
                 </div>
               </div>
             )
@@ -209,29 +212,7 @@ export default function Description() {
                   <div className="p-6 flex flex-col gap-8 w-full bg-[#ffff]/80 round">
                     <div className="flex justify-between items-center">
                       <h2 className="text-primary font-bold">{e?.label}</h2>
-                      <div className="flex gap-2">
-                        <div
-                          className={`cursor-pointer button-prev-slide ${
-                            selected === 0 && "hidden"
-                          }`}
-                        >
-                          <Icon
-                            icon="material-symbols:arrow-back-ios-new"
-                            width={18}
-                          />
-                        </div>
-                        <div
-                          className={`cursor-pointer button-next-slide ${
-                            selected === data?.length - 1 && "hidden"
-                          }`}
-                        >
-                          <Icon
-                            icon="material-symbols:arrow-back-ios-new"
-                            rotate={2}
-                            width={18}
-                          />
-                        </div>
-                      </div>
+                      <Arrow selected={selected} length={data?.length - 1} />
                     </div>
                     <p className="text-primaryDarker font-normal">
                       Жилой комплекс "Яблоновский" расположен на ул. Кобцевой
