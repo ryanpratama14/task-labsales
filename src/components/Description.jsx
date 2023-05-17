@@ -8,13 +8,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import Arrow from "./Arrow";
 
+const itemsPerPage = 1;
+const isMaxSm = window.innerWidth <= 640;
 export default function Description() {
   const [data, setData] = useState([
     {
       id: 0,
       src: parking,
       label: "Парковка",
-      active: false,
       desc: (
         <>
           Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт.
@@ -34,7 +35,6 @@ export default function Description() {
       id: 1,
       src: architecture,
       label: "Архитектура",
-      active: false,
       desc: (
         <>
           Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт.
@@ -54,7 +54,6 @@ export default function Description() {
       id: 2,
       src: security,
       label: "Охрана",
-      active: false,
       desc: (
         <>
           Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт.
@@ -74,7 +73,6 @@ export default function Description() {
       id: 3,
       src: territory,
       label: "Территория",
-      active: true,
       desc: (
         <>
           Жилой комплекс "Яблоновский" расположен на ул. Кобцевой Н.С. в пгт.
@@ -95,13 +93,6 @@ export default function Description() {
   const [selected, setSelected] = useState(3);
   const handleChange = (e) => {
     setSelected(e.id);
-    const temp = data.map((item) => {
-      return {
-        ...item,
-        active: item.id === e.id ? true : false,
-      };
-    });
-    setData(temp);
   };
 
   return (
@@ -131,7 +122,7 @@ export default function Description() {
         {data?.map((e, i) => {
           return (
             <div
-              onClick={() => handleChange(e)}
+              onClick={() => !isMaxSm && handleChange(e)}
               key={e?.id}
               className="cursor-pointer p-4 w-full xl:w-[20%] bg-gray round shadowboxfeatures"
             >
@@ -160,8 +151,8 @@ export default function Description() {
       <div className="paddingX hidden md:grid grid-cols-4 grid-rows-3 gap-8">
         {data?.map((e) => {
           return (
-            e?.active && (
-              <div className="row-span-3 col-span-3 relative">
+            selected === e?.id && (
+              <div key={e?.id} className="row-span-3 col-span-3 relative">
                 <img src={e?.src} className="absolute w-full h-full" />
                 <div className="p-4 absolute left-6 bottom-12 flex flex-col gap-8 w-[70%] bg-[#ffff]/80 round">
                   <h4 className="text-primary font-bold">{e?.label}</h4>
@@ -173,8 +164,9 @@ export default function Description() {
         })}
         {data?.map((e) => {
           return (
-            !e?.active && (
+            selected !== e?.id && (
               <img
+                key={e?.id}
                 onClick={() => {
                   handleChange(e);
                 }}
@@ -185,33 +177,61 @@ export default function Description() {
           );
         })}
       </div>
-      <div className="flex flex-col gap-6">
+      <div className="flex md:hidden flex-col gap-6">
         <Swiper
           slidesPerView={1}
           mousewheel={{
             forceToAxis: true,
           }}
           navigation={{
-            nextEl: ".button-next-slide",
             prevEl: ".button-prev-slide",
+            nextEl: ".button-next-slide",
           }}
-          loop={true}
-          keyboard={true}
           className="w-full"
+          keyboard={true}
           modules={[Navigation]}
+          onSlideChange={(swiper) => {
+            setSelected(swiper.activeIndex);
+          }}
+          initialSlide={selected}
         >
-          {data?.map((e) => {
+          {data?.map((e, i) => {
             return (
-              <SwiperSlide className="relative h-[40rem] w-full">
+              <SwiperSlide
+                key={e?.id}
+                className="animate relative h-[40rem] w-full"
+              >
                 <img
                   src={e?.src}
-                  className="object-cover absolute w-full h-full rounded-b-[10px]"
+                  className="animate object-cover absolute w-full h-full rounded-b-[10px]"
                 />
                 <div className="absolute px-6 bottom-12">
                   <div className="p-6 flex flex-col gap-8 w-full bg-[#ffff]/80 round">
                     <div className="flex justify-between items-center">
                       <h2 className="text-primary font-bold">{e?.label}</h2>
-                      <Arrow />
+                      <div className="flex gap-2">
+                        <div
+                          className={`cursor-pointer button-prev-slide ${
+                            selected === 0 && "hidden"
+                          }`}
+                        >
+                          <Icon
+                            icon="material-symbols:arrow-back-ios-new"
+                            width={18}
+                          />
+                        </div>
+                        <div
+                          className={`cursor-pointer button-next-slide ${
+                            selected === data?.length - 1 && "hidden"
+                          }`}
+                        >
+                          <Icon
+                            icon="material-symbols:arrow-back-ios-new"
+                            rotate={2}
+                            width={18}
+                          />
+                        </div>
+                      </div>
                     </div>
                     <p className="text-primaryDarker font-normal">
                       Жилой комплекс "Яблоновский" расположен на ул. Кобцевой
