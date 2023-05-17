@@ -9,14 +9,14 @@ export default function Features() {
   return (
     <section className="pb-normal">
       <div className="flex flex-col">
-        <div className="flex justify-between lg:-mt-56 md:z-[1] overflow-hidden lg:pt-12">
+        <div className="flex justify-between -mt-[7rem] lg:-mt-56 z-[1] overflow-hidden lg:pt-12">
           <img src={cloud1} className="w-full lg:scale-[1.3]" />
           <img src={cloud2} className="lg:block hidden lg:scale-[1.3]" />
         </div>
         <div className="paddingX flex flex-col justify-center items-center gap-6 z-10">
-          <h1 className="text-primary md:hidden inline-block font-bold">
+          <h2 className="text-primary md:hidden inline-block font-bold">
             О комплексе
-          </h1>
+          </h2>
           <div className="hidden md:grid grid-cols-4 xl:grid-cols-4 gap-4 xl:gap-8 w-full">
             {FeaturesData?.map((e, i) => {
               return (
@@ -64,8 +64,8 @@ export default function Features() {
                         <img src={e?.icon} className="w-12" />
                       </div>
                       <div className="flex flex-col justify-between text-primary">
-                        <h2>{e?.label}</h2>
-                        <h2 className="font-semibold">{e?.desc}</h2>
+                        <h3>{e?.label}</h3>
+                        <h3 className="font-semibold">{e?.desc}</h3>
                       </div>
                     </div>
                   </div>
@@ -76,8 +76,8 @@ export default function Features() {
                         <img src={e?.icon2} className="w-12" />
                       </div>
                       <div className="flex flex-col justify-between text-primary">
-                        <h2>{e?.label2}</h2>
-                        <h2 className="font-semibold">{e?.desc2}</h2>
+                        <h3>{e?.label2}</h3>
+                        <h3 className="font-semibold">{e?.desc2}</h3>
                       </div>
                     </div>
                   </div>

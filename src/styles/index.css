@@ -49,6 +49,10 @@ li {
   user-select: none;
 }
 
+.disabled-text {
+  user-select: none;
+}
+
 .centered {
   top: 50%;
   transform: translate(-50%, -50%);
@@ -86,9 +90,20 @@ li {
   transition-duration: 200ms;
 }
 
+.btn:hover svg path {
+  fill: #ffffff;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(1, 1, 1, 1);
+  transition-duration: 200ms;
+}
+
+.inner {
+  box-shadow: inset 0px 5px 15px rgba(33, 45, 85, 0.06);
+}
+
 @layer base {
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl translate-x-5;
+    @apply text-3xl md:text-5xl lg:text-6xl;
   }
   h2 {
     @apply text-3xl md:text-4xl lg:text-5xl;
@@ -103,10 +118,13 @@ li {
     @apply text-lg md:text-xl lg:text-2xl;
   }
   button {
-    @apply text-white animate w-full md:w-fit px-6 pb-3 pt-4 md:pb-2 md:pt-3 bg-blue shadow-[0px_6px_0px_#2CABDC] hover:shadow-[0px_4px_20px_#0B91C5];
+    @apply text-white animate w-full md:w-fit px-6 pb-3 pt-4 md:pb-2 md:pt-3 bg-blue shadow-[0px_6px_0px_#2CABDC] hover:shadow-[0px_4px_20px_#0B91C5] round text-xl font-semibold;
   }
   p {
     @apply lg:text-lg;
+  }
+  input {
+    @apply p-6 font-medium  outline-none text-xl round placeholder-[#A8ABB7] bg-white shadowregular;
   }
 }
 
@@ -149,5 +167,8 @@ li {
   }
   .shadowboxfeatureschildren {
     @apply shadow-[-3px_3px_15px_0px_rgba(33,45,85,0.2)];
+  }
+  .shadowregular {
+    @apply shadow-[0px_10px_15px_0px_rgba(33,45,85,0.06)];
   }
 }

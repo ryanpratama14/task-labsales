@@ -19,13 +19,16 @@ export default function Main() {
         className="absolute w-full h-full object-cover md:hidden"
       />
       <Navbar />
-      <div className="text-primary flex text-center justify-center items-center flex-col z-10 gap-10 pt-longer">
-        <h3 className="md:hidden inline-block font-medium text-primaryDarker">
+      <div className="text-primary flex items-center text-center justify-center flex-col z-10 gap-10 pt-longer">
+        <h3 className="md:hidden font-medium text-primaryDarker">
           Главная / Жилые комплексы /<br />
           <span className="font-semibold">/ Яблоновский</span>
         </h3>
         <h1 className="font-raleway">
-          Жилой Комплекс <span className="font-bold">{`«Яблоновский»`}</span>
+          Жилой Комплекс
+          <span className="font-bold max-md:hidden"> «Яблоновский»</span>
+          <br />
+          <span className="font-bold md:hidden">«Яблоновский»</span>
         </h1>
         <div className="flex flex-col gap-4 text-center ">
           <h3 className="md:inline-block hidden">
@@ -38,9 +41,7 @@ export default function Main() {
           </h3>
           <h3 className="font-bold">от 63 801 до 65 678 ₽/м²</h3>
         </div>
-        <button className="round text-xl font-semibold">
-          Узнать стоимость проекта
-        </button>
+        <button>Узнать стоимость проекта</button>
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 w-full z-[2]">
           {MainPageData?.map((e, i) => {
             return (
@@ -97,7 +98,7 @@ export default function Main() {
                 />
               </div>
               <div className="p-4 round bg-white shadowboxchildren text-primary">
-                <div key={i} className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2">
                   <h3 className="h2 md:h3">{e?.label}</h3>
                   <h3 className="font-bold md:h3 h2">{e?.desc}</h3>
                 </div>

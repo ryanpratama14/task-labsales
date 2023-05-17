@@ -5,6 +5,8 @@ import React from "react";
 import Main from "./components/Main";
 import Features from "./components/Features";
 import Infrastructure from "./components/Infrastructure";
+import Footer from "./components/Footer";
+import Description from "./components/Description";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <Main />
       <Features />
       <Infrastructure />
+      <Description />
+      <Footer />
     </React.Fragment>
   );
 };
