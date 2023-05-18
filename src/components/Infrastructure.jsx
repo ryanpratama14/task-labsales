@@ -53,7 +53,7 @@ const dataMobile = [
 
 export default function Infrastructure() {
   const [isHovered, setIsHovered] = useState(false);
-  const [selected, setSelected] = useState(1);
+  const [selected, setSelected] = useState(0);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
