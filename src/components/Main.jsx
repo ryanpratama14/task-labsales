@@ -69,7 +69,7 @@ export default function Main() {
                   </div>
                   <div className="p-4 lg:px-6 round bg-white shadowboxchildren">
                     <div key={i} className="flex flex-col gap-2 text-left">
-                      <h5>{e?.label}</h5>
+                      <h5 className="md:h4 h5">{e?.label}</h5>
                       <h5 className="font-bold">{e?.desc}</h5>
                     </div>
                   </div>
