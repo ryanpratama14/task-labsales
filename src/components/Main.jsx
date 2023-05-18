@@ -82,6 +82,9 @@ export default function Main() {
         keyboard={true}
         className="w-full md:hidden"
         modules={[Keyboard, Mousewheel]}
+        onSlideChange={(e) => {
+          setSelected(e?.activeIndex);
+        }}
       >
         {MainPageData?.map((e, i) => {
           return (
