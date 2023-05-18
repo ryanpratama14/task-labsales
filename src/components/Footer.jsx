@@ -113,21 +113,19 @@ export default function Footer() {
         <div className="flex flex-col justify-center items-center w-full gap-6 paddingX">
           <p className="font-bold text-xl text-primary">Или заполните форму</p>
           <div className="grid grid-cols-1 gap-6 w-full">
-            <div className="relative">
+            <div className="relative iOS">
               <input placeholder="Ваше имя" className="w-full" />
               <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent from-30% to-40% to-[#e3e7eb] bg-gradient-to-r" />
             </div>
-            <div className="relative">
+            <div className="relative iOS">
               <input placeholder="Ваш номер телефона" className="w-full" />
               <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent from-30% to-40% to-[#e3e7eb] bg-gradient-to-r" />
             </div>
-            <div className="relative">
-              <input placeholder="Ваш email" className="w-full" />
+            <div className="relative iOS">
+              <input placeholder="Ваш email" className="relative w-full" />
               <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent from-30% to-40% to-[#e3e7eb] bg-gradient-to-r" />
             </div>
-            <div className="h-full flex items-center">
-              <button className="w-full">Отправить заявку</button>
-            </div>
+            <button className="w-full">Отправить заявку</button>
           </div>
           <div className="flex gap-4 items-center">
             <div

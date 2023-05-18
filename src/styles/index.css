@@ -53,6 +53,10 @@ input {
   -webkit-appearance: none;
 }
 
+.iOS {
+  -webkit-appearance: none;
+}
+
 .disabled-text {
   user-select: none;
 }
