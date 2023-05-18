@@ -20,7 +20,7 @@ export default function Features() {
           <img src={cloud2} className="lg:block hidden lg:scale-[1.3]" />
         </div>
         <div className="paddingX flex flex-col justify-center items-center gap-6 z-10">
-          <h1 className="text-primary lg:hidden inline-block font-bold">
+          <h1 className="text-primary md:h2 lg:hidden inline-block font-bold">
             О комплексе
           </h1>
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-8 w-full">
