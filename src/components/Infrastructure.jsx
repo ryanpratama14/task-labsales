@@ -7,6 +7,7 @@ import {
   storeIcon,
 } from "./Icons";
 import IconMouse from "./IconMouse";
+import Eclipses from "./Eclipses";
 
 const data = [
   {
@@ -52,7 +53,7 @@ const dataMobile = [
 
 export default function Infrastructure() {
   const [isHovered, setIsHovered] = useState(false);
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(1);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
 
@@ -68,13 +69,16 @@ export default function Infrastructure() {
   }, []);
 
   return (
-    <section className="">
+    <section className="relative">
+      <div className="absolute top-10 right-4 flex justify-between w-32 md:hidden z-20">
+        <Eclipses />
+      </div>
       {isHovered && <IconMouse x={x} y={y} />}
       <div className="flex flex-col gap-12 max-sm:pt-24 text-center">
         <h1 className="text-primary font-bold paddingX md:h2">
           Наша инфраструктура
         </h1>
-        <div className="relative w-hull min-h-[90vh] md:min-h-[80vh]">
+        <div className="relative w-hull min-h-[85vh] md:min-h-[80vh]">
           <iframe
             src={data[selected]?.src}
             className="w-full h-full absolute"

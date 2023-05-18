@@ -1,16 +1,22 @@
 import React from "react";
 import cloud1 from "../assets/cloud1.png";
 import cloud2 from "../assets/cloud2.png";
+import cloud3 from "../assets/cloud3.png";
 import { FeaturesData, FeaturesData2 } from "../constants/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Keyboard, Mousewheel, Pagination } from "swiper";
+import Eclipses from "./Eclipses";
 
 export default function Features() {
   return (
-    <section className="pb-normal">
+    <section className="pb-normal relative">
+      <div className="absolute -top-8 right-2 flex justify-between w-32 md:hidden z-20">
+        <Eclipses />
+      </div>
       <div className="flex flex-col">
         <div className="flex justify-between -mt-[4rem] md:-mt-56 lg:-mt-56 z-[1] overflow-hidden lg:pt-12">
-          <img src={cloud1} className="w-full lg:scale-[1.3]" />
+          <img src={cloud3} className="lg:hidden w-full h-32" />
+          <img src={cloud1} className="lg:block hidden lg:scale-[1.3]" />
           <img src={cloud2} className="lg:block hidden lg:scale-[1.3]" />
         </div>
         <div className="paddingX flex flex-col justify-center items-center gap-6 z-10">
