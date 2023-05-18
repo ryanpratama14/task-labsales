@@ -144,7 +144,7 @@ input {
     @apply lg:text-lg;
   }
   input {
-    @apply p-6 font-medium outline-none text-xl round placeholder-[#A8ABB7] bg-white shadowregular;
+    @apply p-6 iOS relative font-medium focus:outline-none outline-none text-xl round placeholder-[#A8ABB7] bg-white shadowregular;
   }
 }
 

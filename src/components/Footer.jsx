@@ -56,11 +56,9 @@ export default function Footer() {
                   <input placeholder="Ваш email" />
                   <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent from-30% to-40% to-[#e3e7eb] bg-gradient-to-r" />
                 </div>
-                <div className="h-full flex items-center">
-                  <button className="w-full !h-[80%] mb-2 hover:mb-0">
-                    Отправить заявку
-                  </button>
-                </div>
+                <button className="w-full mb-2 hover:mb-0">
+                  Отправить заявку
+                </button>
               </div>
               <div className="flex gap-2 items-center">
                 <div
