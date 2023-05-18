@@ -95,7 +95,7 @@ export default function Description() {
   ];
 
   return (
-    <section className="flex flex-col gap-8 py-normal">
+    <section className="flex flex-col gap-8 pt-longer3 pb-normal md:py-normal">
       <div className="paddingX flex flex-col gap-6 text-center justify-center items-center">
         <h1 className="text-primary md:h2 font-bold">
           Описание Жилого Комплекса

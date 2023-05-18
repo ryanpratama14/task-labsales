@@ -66,6 +66,11 @@ input {
   transform: translate(-50%, -50%);
 }
 
+.centered2 {
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
 .swiper-pagination {
   display: flex;
   justify-content: center;
@@ -99,6 +104,13 @@ input {
 }
 
 .btn:hover svg path {
+  fill: #ffffff;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(1, 1, 1, 1);
+  transition-duration: 200ms;
+}
+
+.btnMaps svg path {
   fill: #ffffff;
   transition-property: all;
   transition-timing-function: cubic-bezier(1, 1, 1, 1);
@@ -187,4 +199,9 @@ input {
 .shadowregular {
   box-shadow: 0px 5px 19px 0px rgba(33, 45, 85, 0.2),
     -5px -0.5px 15px 0px rgba(33, 45, 85, 0.05);
+}
+
+.shadowmaps {
+  box-shadow: 0px 5px 10px 0px rgba(33, 45, 85, 0.2),
+    -5px -0.5px 10px 0px rgba(33, 45, 85, 0.05);
 }
