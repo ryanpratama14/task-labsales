@@ -46,15 +46,15 @@ export default function Footer() {
               <div className="grid grid-cols-2 gap-6">
                 <div className="relative">
                   <input placeholder="Ваше имя" />
-                  <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent to-[#f1f4f6] bg-gradient-to-r" />
+                  <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent from-30% to-40% to-[#e3e7eb] bg-gradient-to-r" />
                 </div>
                 <div className="relative">
                   <input placeholder="Ваш номер телефона" />
-                  <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent to-[#f1f4f6] bg-gradient-to-r" />
+                  <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent from-30% to-40% to-[#e3e7eb] bg-gradient-to-r" />
                 </div>
                 <div className="relative">
                   <input placeholder="Ваш email" />
-                  <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent to-[#f1f4f6] bg-gradient-to-r" />
+                  <div className="centered absolute left-0 w-4 rounded-full aspect-square from-transparent from-30% to-40% to-[#e3e7eb] bg-gradient-to-r" />
                 </div>
                 <div className="h-full flex items-center">
                   <button className="w-full !h-[80%] mb-2 hover:mb-0">

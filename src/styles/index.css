@@ -49,6 +49,10 @@ li {
   user-select: none;
 }
 
+input {
+  -webkit-appearance: none;
+}
+
 .disabled-text {
   user-select: none;
 }
@@ -124,7 +128,7 @@ li {
     @apply lg:text-lg;
   }
   input {
-    @apply p-6 font-medium  outline-none text-xl round placeholder-[#A8ABB7] bg-white shadowregular;
+    @apply p-6 font-medium outline-none text-xl round placeholder-[#A8ABB7] bg-white shadowregular;
   }
 }
 
@@ -174,7 +178,9 @@ li {
   .shadowboxfeatureschildren {
     @apply shadow-[-3px_3px_15px_0px_rgba(33,45,85,0.2)];
   }
-  .shadowregular {
-    @apply shadow-[0px_10px_15px_0px_rgba(33,45,85,0.06)];
-  }
+}
+
+.shadowregular {
+  box-shadow: 0px 5px 19px 0px rgba(33, 45, 85, 0.2),
+    -5px -0.5px 15px 0px rgba(33, 45, 85, 0.05);
 }
