@@ -38,11 +38,14 @@ export default function NavbarMobile() {
   return (
     <nav
       className={`overflow-x-hidden z-50 overflow-y-scroll duration-200 absolute paddingX animate lg:hidden top-0 w-full py-6 ${
-        open && "bg-[#212D55]"
+        open ? "bg-[#212D55]" : "from-white bg-gradient-to-b"
       }`}
     >
       <div className={`animate flex h-fit justify-between z-30 items-center`}>
-        <img src={open ? logo2 : logo} className="w-[50%] md:w-[30%]" />
+        <img
+          src={open ? logo2 : logo}
+          className="w-[50%] md:w-[30%] select-none"
+        />
         <div
           className={`transition-all duration-300 flex gap-3 ${
             open ? "-translate-x-12 invisible" : "scale-100 translate-x-0"

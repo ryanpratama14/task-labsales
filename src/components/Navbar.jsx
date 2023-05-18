@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="absolute hidden lg:flex flex-col top-0 w-full pt-3 pb-36 from-white from-20% via-white via-20% to-90% bg-gradient-to-b">
       <div className="flex items-center paddingX justify-between">
-        <img src={logo} className="w-56" />
+        <img src={logo} className="w-56 select-none" />
         <ul className="flex gap-6 xl:gap-12">
           {NavbarData?.map((e, i) => {
             return (
