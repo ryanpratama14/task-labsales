@@ -59,8 +59,8 @@ export default function Infrastructure() {
 
   useEffect(() => {
     const handleCursor = (e) => {
-      setX(e?.clientX - 20);
-      setY(e?.clientY - 20);
+      setX(e?.clientX);
+      setY(e?.clientY);
     };
     window.addEventListener("mousemove", handleCursor);
     return () => {
