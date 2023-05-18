@@ -14,13 +14,13 @@ export default function Features() {
         <Eclipses />
       </div>
       <div className="flex flex-col">
-        <div className="flex justify-between -mt-[4rem] md:-mt-56 lg:-mt-56 z-[1] overflow-hidden lg:pt-12">
+        <div className="flex justify-between -mt-[4rem] md:-mt-24 lg:-mt-56 z-[1] overflow-hidden lg:pt-12">
           <img src={cloud3} className="lg:hidden w-full h-32" />
           <img src={cloud1} className="lg:block hidden lg:scale-[1.3]" />
           <img src={cloud2} className="lg:block hidden lg:scale-[1.3]" />
         </div>
         <div className="paddingX flex flex-col justify-center items-center gap-6 z-10">
-          <h1 className="text-primary md:hidden inline-block font-bold">
+          <h1 className="text-primary lg:hidden inline-block font-bold">
             О комплексе
           </h1>
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-8 w-full">
