@@ -3,9 +3,7 @@ import logo from "../assets/logo2.png";
 import logo2 from "../assets/logodark.png";
 import { Icon } from "@iconify/react";
 
-export default function NavbarMobile() {
-  const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(null);
+export default function NavbarMobile({ open, toggle }) {
   const [data, setData] = useState([
     {
       label: "Жилые комплексы",
@@ -52,10 +50,7 @@ export default function NavbarMobile() {
           }`}
         >
           <h4 className="text-primary font-medium">Меню</h4>
-          <div
-            className="flex flex-col gap-2 cursor-pointer"
-            onClick={() => setOpen(!open)}
-          >
+          <div className="flex flex-col gap-2 cursor-pointer" onClick={toggle}>
             <div className="w-10 round h-[0.2rem] round bg-primary" />
             <div className="w-10 round h-[0.2rem] round bg-primary" />
             <div className="w-10 round h-[0.2rem] round bg-primary" />
@@ -63,7 +58,7 @@ export default function NavbarMobile() {
         </div>
         {open && (
           <div
-            onClick={() => setOpen(!open)}
+            onClick={toggle}
             className={`cursor-pointer p-1 bg-white text-blue rounded-full flex items-center justify-center`}
           >
             <Icon

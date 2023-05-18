@@ -9,8 +9,13 @@ import NavbarMobile from "./NavbarMobile";
 
 export default function Main() {
   const [selected, setSelected] = useState(0);
+  const [open, setOpen] = useState(false);
+
   return (
-    <main className="relative gap-12 flex-col min-h-screen flex justify-center items-center paddingX">
+    <main
+      onClick={() => open && setOpen(false)}
+      className="relative gap-12 flex-col min-h-screen flex justify-center items-center paddingX"
+    >
       <img
         src={bg}
         className="absolute  w-full h-full object-cover max-md:hidden"
@@ -20,7 +25,7 @@ export default function Main() {
         className="absolute w-full h-full object-cover md:hidden"
       />
       <Navbar />
-      <NavbarMobile />
+      <NavbarMobile toggle={() => setOpen(!open)} open={open} />
       <div className="text-primary flex items-center text-center justify-center flex-col z-10 gap-10 pt-32 md:pt-longer">
         <h3 className="md:hidden font-medium text-primaryDarker">
           Главная / Жилые комплексы /<br />
