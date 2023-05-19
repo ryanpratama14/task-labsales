@@ -125,7 +125,7 @@ export default function Description() {
             <div
               onClick={() => !isMaxSm && handleChange(e)}
               key={e?.id}
-              className="cursor-pointer p-4 w-full  xl:w-[20%] bg-gray round shadowboxfeatures"
+              className="cursor-pointer p-4 w-full  xl:w-[22%] bg-gray round shadowboxfeatures"
             >
               <div
                 className={`px-4 py-4 lg:py-6 animate border-[1px] bg-white relative round shadowboxfeatureschildren

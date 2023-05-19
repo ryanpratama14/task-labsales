@@ -31,12 +31,14 @@ export default function Features() {
                   className="py-8 px-4 bg-gray round shadowboxfeatures"
                 >
                   <div className="flex gap-6 lg:gap-4">
-                    <div className="px-4 py-2 bg-white flex items-center relative round shadowboxfeatureschildren">
+                    <div className="px-4 py-3 bg-white flex items-center relative round shadowboxfeatureschildren">
                       <div className="centered left-0 w-2 h-3 absolute rounded-full bg-[#e6eaee]" />
                       <img src={e?.icon} className="w-8 xl:w-12" />
                     </div>
                     <div className="flex flex-col justify-between text-primary">
-                      <h5 className="p md:h4 lg:h5">{e?.label}</h5>
+                      <h5 className="p md:h4 lg:h5 xl:text-xl 2xl:text-2xl">
+                        {e?.label}
+                      </h5>
                       <h5 className="pSmaller font-semibold md:h4 2xl:h5 lg:p">
                         {e?.desc}
                       </h5>

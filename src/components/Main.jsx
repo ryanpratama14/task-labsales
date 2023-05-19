@@ -50,7 +50,7 @@ export default function Main() {
             <h3 className="font-bold">от 63 801 до 65 678 ₽/м²</h3>
           </div>
           <button>Узнать стоимость проекта</button>
-          <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 w-full z-[2]">
+          <div className="xl:px-12 2xl:px-24 hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4 w-full z-[2]">
             {MainPageData?.map((e, i) => {
               return (
                 <div
@@ -69,8 +69,10 @@ export default function Main() {
                   </div>
                   <div className="p-4 lg:px-6 round bg-white shadowboxchildren">
                     <div key={i} className="flex flex-col gap-2 text-left">
-                      <h5 className="md:h4 h5">{e?.label}</h5>
-                      <h5 className="font-bold">{e?.desc}</h5>
+                      <h5 className="md:h4 h5 xl:text-2xl ">{e?.label}</h5>
+                      <h5 className="xl:text-2xl lg:h5 md:h4 h5 font-bold">
+                        {e?.desc}
+                      </h5>
                     </div>
                   </div>
                 </div>
