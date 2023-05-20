@@ -1,4 +1,5 @@
-npm install
-npm run dev
+## 1. npm install
 
-ready to inspect at http://localhost:5173/task-labsales
+## 2. npm run dev
+
+## 3. ready to inspect at http://localhost:5173/task-labsales
